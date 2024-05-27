@@ -1,0 +1,94 @@
+.module {
+  width: 980px;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+}
+
+.dateContainer {
+  display: flex;
+  gap: 12px;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: auto;
+  user-select: none;
+}
+
+.notDragging {
+  scroll-behavior: smooth;
+}
+
+.dateContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.dateItem {
+  min-width: 56px;
+  min-height: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background-color: #fff;
+  color: black;
+}
+
+.dateItem:hover {
+  cursor: pointer;
+}
+
+.date[data-theme="Regular"] {
+  font-weight: 700;
+}
+
+.daysInWeek[data-theme="Regular"] {
+  font-weight: 400;
+}
+
+.saturday {
+  color: navy;
+}
+
+.sunday {
+  color: red;
+}
+
+.selected {
+  background-color: red;
+}
+
+.selected:hover {
+  cursor: default;
+}
+
+.selected > p,
+.selected > p:not(.bodyTextCaption) {
+  color: lightyellow;
+}
+
+
+.arrow {
+  content: "";
+  display: flex;
+  align-items: center;
+  position: absolute;
+  padding: 8px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 30%,
+    #ffffff 100%
+  );
+  border: none
+}
+
+.arrowNext {
+  top: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
